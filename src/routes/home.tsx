@@ -1,15 +1,20 @@
-import { auth } from "../firebase";
+import styled from "styled-components";
+import PostTweetForm from "../components/post-tweet-form";
+import TimeLine from "../components/time-line";
+
+const Wrapper = styled.div`
+  display: grid;
+  gap: 50px;
+  overflow-y: scroll;
+  grid-template-rows: 1fr 5fr;
+`;
 
 const Home = () => {
-  const logOut = () => {
-    auth.signOut();
-  };
-
   return (
-    <>
-      <div>Home</div>
-      <button onClick={logOut}>Log Out</button>
-    </>
+    <Wrapper>
+      <PostTweetForm />
+      <TimeLine />
+    </Wrapper>
   );
 };
 
